@@ -143,3 +143,36 @@ def generate_next_date(day,month,year):
 
 
 generate_next_date(28,2,2015)
+
+
+
+# pizza slice
+
+n=int(input("engter number of slices"))
+if (n%2==0):
+    a=120.00*n
+    print(a)
+else:
+    a=123.00*n
+    print(a)
+
+x=input()
+print(type(x))
+## print second highest
+l=[1,2,3,4,5,6,7,8,8,9,10,10]
+a=list(set(l))
+b=a.remove(max(a))
+print(max(a))
+
+## change position of every nth to n+1
+
+l=[1,2,3,4]
+for i in range(0,len(l),2):
+    l[i],l[i+1]=l[i+1],l[i]
+print(l)
+
+#max and min of a set
+a={1,2,3,4,2,3,5,6,7}
+print(max(a))
+print(min(a))
+
