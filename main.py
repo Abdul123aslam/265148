@@ -143,3 +143,15 @@ def generate_next_date(day,month,year):
 
 
 generate_next_date(28,2,2015)
+
+a=input()
+if(a=="lol"):
+    print("laughing out loud")
+elif(a=="rofl"):
+    print("rolling on floor laughing")
+elif(a=="lmk"):
+    print("let me know")
+elif(a=="smh"):
+    print("shaking my head")
+else:
+    pass
