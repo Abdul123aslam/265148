@@ -176,3 +176,12 @@ a={1,2,3,4,2,3,5,6,7}
 print(max(a))
 print(min(a))
 
+#repeated element in a tuple
+a=(1,2,3,4,2,1)
+c=set()
+for i in range(len(a)):
+    b=a.count(a[i])
+    if b>1:
+        c.add(a[i])
+d=list(c)
+print([d[i] for i in range(len(d))])
