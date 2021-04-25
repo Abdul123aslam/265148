@@ -185,3 +185,60 @@ for i in range(len(a)):
         c.add(a[i])
 d=list(c)
 print([d[i] for i in range(len(d))])
+
+###
+def countdown():
+    i=5
+    while i > 0:
+        yield i
+        i -= 1
+
+for i in countdown():
+    print(i)
+
+
+###
+def is_even(x):
+    if x == 0:
+        return True
+    else:
+        return is_odd(x-1)
+
+def is_odd(x):
+    return not is_even(x)
+
+
+print(is_odd(17))
+print(is_even(23))
+
+#set
+first = {1, 2, 3, 4, 5, 6}
+second = {4, 5, 6, 7, 8, 9}
+
+print(first | second)
+print(first & second)
+print(first - second)
+print(second - first)
+print(first ^ second)
+
+
+##itertool
+
+from itertools import count
+
+for i in count(3):
+    print(i)
+    if i >=11:
+        break
+
+from itertools import accumulate, takewhile
+
+nums = list(accumulate(range(8)))
+print(nums)
+print(list(takewhile(lambda x: x<= 6, nums)))
+
+from itertools import product, permutations
+
+letters = ("A", "B")
+print(list(product(letters, range(2))))
+print(list(permutations(letters)))
