@@ -242,3 +242,119 @@ from itertools import product, permutations
 letters = ("A", "B")
 print(list(product(letters, range(2))))
 print(list(permutations(letters)))
+
+#
+import re
+
+pattern = r"spam"
+
+if re.match(pattern, "eggspamsausagespam"):
+    print("Match")
+else:
+    print("No match")
+
+if re.search(pattern, "eggspamsausagespam"):
+    print("Match")
+else:
+    print("No match")
+
+print(re.findall(pattern, "eggspamsausagespam"))
+
+##
+import re
+
+pattern = r"pam"
+
+match = re.search(pattern, "eggspamsausage")
+if match:
+    print(match.group())
+    print(match.start())
+    print(match.end())
+    print(match.span())
+
+    ##
+
+import re
+
+str = "My name is David. Hi David."
+pattern = r"David"
+newstr = re.sub(pattern, "Amy", str)
+print(newstr)
+
+##
+import re
+
+pattern = r"gr.y"
+
+if re.match(pattern, "grey"):
+    print("Match 1")
+
+if re.match(pattern, "gray"):
+    print("Match 2")
+
+if re.match(pattern, "blue"):
+    print("Match 3")
+
+##
+import re
+
+pattern = r"^gr.y$"
+
+if re.match(pattern, "grey"):
+    print("Match 1")
+
+if re.match(pattern, "gray"):
+    print("Match 2")
+
+if re.match(pattern, "stingray"):
+    print("Match 3")
+
+##
+import re
+
+pattern = r"[aeiou]"
+
+if re.search(pattern, "grey"):
+    print("Match 1")
+
+if re.search(pattern, "qwertyuiop"):
+    print("Match 2")
+
+if re.search(pattern, "rhythm myths"):
+    print("Match 3")
+
+
+##import re
+
+pattern = r"egg(spam)*"
+
+if re.match(pattern, "egg"):
+    print("Match 1")
+
+if re.match(pattern, "eggspamspamegg"):
+    print("Match 2")
+
+if re.match(pattern, "spam"):
+    print("Match 3")
+
+##Juice maker
+
+
+class Juice:
+    def __init__(self, name, capacity):
+        self.name = name
+        self.capacity = capacity
+
+    def __str__(self):
+        return (self.name + ' (' + str(self.capacity) + 'L)')
+
+    def __add__(self, newJuice):
+        self.name += "&" + str(newJuice.name)
+        self.capacity += newJuice.capacity
+        return self.__str__
+
+
+a = Juice('Orange', 1.5)
+b = Juice('Apple', 2.0)
+
+print(a.__add__(b)())
